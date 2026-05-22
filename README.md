@@ -1,33 +1,12 @@
-<div align="center">
-  <h1>S-Cure Health Network</h1>
-  <p><strong>The Campus Clinic, Uncaged.</strong></p>
-  <p>A premium, cinematic healthcare platform designed for modern university campuses.</p>
-</div>
+# S-Cure Health Network
 
-<br />
-
-## 🌟 Overview
-
-**S-Cure** is a comprehensive, AI-powered healthcare network built specifically to digitize and streamline campus clinics. It moves away from the sterile, corporate look of legacy medical software, instead offering a handcrafted, ultra-premium UI ("Nordic Ice" aesthetic) that feels like a Silicon Valley Series-A product.
-
-Built on the robust **MERN Stack** (MongoDB, Express, React, Node.js), S-Cure provides military-grade encrypted health records, real-time WebRTC teleconsultations, and role-based dashboards tailored for every user on campus.
-
-## 🚀 Key Features
-
-- **Role-Based Workspaces:** Dedicated, highly customized dashboards for Students, Doctors, Pharmacists, and Administrators.
-- **Teleconsultations (WebRTC):** Secure, peer-to-peer video calls directly within the browser for remote doctor visits.
-- **Symptom Checker:** An intelligent symptom diagnostic tool designed to triage students before they book an appointment.
-- **Live Notifications:** Real-time Socket.io integration alerts users when an appointment is confirmed, or a prescription is ready.
-- **Encrypted Records:** Medical history is treated with the utmost privacy, utilizing advanced backend encryption.
-- **Bespoke UI/UX:** A custom-built, glassmorphic UI featuring ambient glow gradients, micro-animations, and a fully responsive grid system.
-
-## 🛠️ Technology Stack
+## Technologies Used
 
 **Frontend:**
 - React 18
 - React Router DOM v6
+- CSS3 (Custom Glassmorphism)
 - Lucide React (Icons)
-- CSS3 (Custom Glassmorphism & Animations)
 
 **Backend:**
 - Node.js & Express.js
@@ -35,53 +14,32 @@ Built on the robust **MERN Stack** (MongoDB, Express, React, Node.js), S-Cure pr
 - JSON Web Tokens (JWT) for Authentication
 - Socket.io for Real-Time WebSockets
 - Simple-Peer (WebRTC) for Video Calling
-- Stripe API for Payments
 
-## ⚙️ Local Development Setup
+## How It Works
 
-To run S-Cure locally on your machine, follow these steps:
+S-Cure is a comprehensive healthcare network designed for modern university campuses. The system operates through distinct, role-based workflows:
 
-### Prerequisites
-- [Node.js](https://nodejs.org/en/) (v16 or higher)
-- [MongoDB](https://www.mongodb.com/) (Local or Atlas Cloud)
+1. **Students** can log in, run their symptoms through an AI-powered diagnostic checker, and seamlessly book appointments with campus doctors.
+2. **Doctors** manage their schedules through a dedicated dashboard and can initiate secure, peer-to-peer WebRTC video consultations with patients directly in the browser.
+3. **Pharmacists** receive instant real-time notifications via Socket.io when a doctor issues a prescription, allowing them to track and dispense medication efficiently.
+4. **Administrators** have oversight of the entire clinic's operations and user management.
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/misscoder51/scure.git
-cd scure
-```
+## How to Deploy
 
-### 2. Backend Setup
-```bash
-cd backend
-npm install
-```
-Create a `.env` file inside the `backend` folder and add your variables:
-```env
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/scure
-JWT_SECRET=your_super_secret_jwt_key
-STRIPE_SECRET_KEY=sk_test_your_mock_key
-```
-Start the backend server:
-```bash
-npm start
-```
+To deploy S-Cure into a live production environment, the MERN stack is split into specialized hosting platforms for optimal performance and security:
 
-### 3. Frontend Setup
-Open a new terminal window:
-```bash
-cd frontend
-npm install
-```
-Start the development server:
-```bash
-npm start
-```
-The application will be running at `http://localhost:3000`.
+### 1. Database (MongoDB Atlas)
+- Host the database on **MongoDB Atlas** (Free Tier).
+- Ensure your cluster's Network Access is configured to allow connections from your backend.
+- Retrieve the connection string (MONGO_URI) to use in your backend environment variables.
 
-## 🔒 Security & Privacy
-S-Cure was built with data privacy in mind. Medical data is highly sensitive, so the platform enforces strict JWT validation on all API routes, ensures passwords are encrypted via bcrypt, and isolates patient data so that only authorized doctors and pharmacists can access relevant scopes.
+### 2. Backend (Render.com)
+- Deploy the `backend` folder as a **Web Service** on **Render.com**.
+- Set the build command to `npm install` and the start command to `node server.js`.
+- Add your environment variables: `MONGO_URI`, `JWT_SECRET`, and `PORT`.
+- Render automatically provides a secure HTTPS URL for your live API.
 
----
-*Designed & Developed for the future of student healthcare.*
+### 3. Frontend (Vercel)
+- Deploy the `frontend` folder to **Vercel** as a **Create React App**.
+- Before deploying, ensure the frontend API calls are pointed to your new Render backend URL instead of `localhost`.
+- Vercel handles the edge-caching and provides a lightning-fast, production-ready React application.
