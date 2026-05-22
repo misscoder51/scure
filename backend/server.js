@@ -90,7 +90,7 @@ io.on('connection', (socket) => {
 });
 
 // ─── DATABASE ────────────────────────────────────────────────
-const MONGODB_URI = 'mongodb+srv://Jasman:Qwerty@cluster0.wmsgc.mongodb.net/appointments?retryWrites=true&w=majority&tls=true';
+const MONGODB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/scure';
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
