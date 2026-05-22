@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://i.imgur.com/kS9lY45.png" alt="S-Cure Logo" width="100"/>
   <h1>S-Cure Health Network</h1>
   <p><strong>The Campus Clinic, Uncaged.</strong></p>
   <p>A premium, cinematic healthcare platform designed for modern university campuses.</p>
