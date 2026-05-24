@@ -85,10 +85,7 @@ io.on('connection', (socket) => {
 // ─── DATABASE ────────────────────────────────────────────────
 const MONGODB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/scure';
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).catch(err => console.error('Initial mongoose connect failed:', err.message));
+mongoose.connect(MONGODB_URI).catch(err => console.error('Initial mongoose connect failed:', err.message));
 
 mongoose.connection.once('open', () => {
   console.log('[DB] Database connection established');
