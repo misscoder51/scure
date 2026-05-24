@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Pill, Package, AlertTriangle, CheckCircle, Activity, TrendingUp, RefreshCw, ChevronDown, Plus, X, Zap } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
-const BASE = 'http://localhost:5001';
+const BASE = 'https://scure-backend.onrender.com';
 
 const card = {
   background: 'rgba(6,9,20,0.8)', backdropFilter: 'blur(20px)',

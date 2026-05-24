@@ -19,10 +19,10 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     Promise.all([
-      axios.get('http://localhost:5001/doctors').catch(() => ({ data: [] })),
-      axios.get('http://localhost:5001/appointments').catch(() => ({ data: [] })),
-      axios.get('http://localhost:5001/users').catch(() => ({ data: [] })),
-      axios.get('http://localhost:5001/inventory').catch(() => ({ data: [] })),
+      axios.get('https://scure-backend.onrender.com/doctors').catch(() => ({ data: [] })),
+      axios.get('https://scure-backend.onrender.com/appointments').catch(() => ({ data: [] })),
+      axios.get('https://scure-backend.onrender.com/users').catch(() => ({ data: [] })),
+      axios.get('https://scure-backend.onrender.com/inventory').catch(() => ({ data: [] })),
     ]).then(([docRes, aptRes, userRes, invRes]) => {
       setDoctorsCount(docRes.data.length);
       setAppointmentsCount(aptRes.data.length);
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
   const handleDeleteUser = async (userId) => {
     if (!window.confirm('Delete this user?')) return;
     try {
-      await axios.delete(`http://localhost:5001/users/${userId}`);
+      await axios.delete(`https://scure-backend.onrender.com/users/${userId}`);
       setAllUsers(prev => prev.filter(u => u._id !== userId));
       setUsersCount(c => c - 1);
     } catch (e) { console.error(e); }
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     if (!broadcastTitle || !broadcastMsg) return;
     try {
-      await axios.post('http://localhost:5001/notifications/broadcast', { title: broadcastTitle, message: broadcastMsg });
+      await axios.post('https://scure-backend.onrender.com/notifications/broadcast', { title: broadcastTitle, message: broadcastMsg });
       setBroadcastStatus('✓ Broadcast sent to all users!');
       setBroadcastTitle(''); setBroadcastMsg('');
       setTimeout(() => setBroadcastStatus(''), 3000);

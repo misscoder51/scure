@@ -162,7 +162,7 @@ export default function SymptomChecker() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5001/symptoms/analyze",
+        "https://scure-backend.onrender.com/symptoms/analyze",
         {
           symptoms: allSymptoms,
           additionalInfo: additionalText,

@@ -19,7 +19,7 @@ const DoctorDashboard = () => {
     const fetchAppointments = async () => {
       try {
         const query = user ? `?doctorId=${user._id}` : '';
-        const res = await axios.get(`http://localhost:5001/appointments${query}`);
+        const res = await axios.get(`https://scure-backend.onrender.com/appointments${query}`);
         setAppointments(res.data);
       } catch (e) { console.error(e); }
       finally { setIsLoading(false); }
@@ -29,7 +29,7 @@ const DoctorDashboard = () => {
 
   const handleStatusUpdate = async (aptId, newStatus) => {
     try {
-      await axios.patch(`http://localhost:5001/appointments/${aptId}`, { status: newStatus });
+      await axios.patch(`https://scure-backend.onrender.com/appointments/${aptId}`, { status: newStatus });
       setAppointments(prev => prev.map(a => a._id === aptId ? { ...a, status: newStatus } : a));
     } catch (e) { console.error(e); }
   };
@@ -39,7 +39,7 @@ const DoctorDashboard = () => {
     if (!rxForm.patientName || rxForm.medicines[0].name === '') { setRxStatus('Please fill patient name and at least one medicine.'); return; }
     setRxLoading(true); setRxStatus('');
     try {
-      await axios.post('http://localhost:5001/prescriptions', {
+      await axios.post('https://scure-backend.onrender.com/prescriptions', {
         ...rxForm,
         doctorId: user?._id,
         doctorName: `Dr. ${user?.firstName || ''} ${user?.lastName || ''}`.trim(),

@@ -26,7 +26,7 @@ const VideoCall = () => {
     });
     peerConnectionRef.current.onicecandidate = handleICECandidateEvent;
 
-    const socket = new WebSocket('ws://localhost:5000/');
+    const socket = new WebSocket('wss://scure-backend.onrender.com/');
     socket.onopen = () => {
       console.log('Connected to signaling server');
       socket.onmessage = handleSocketMessage;
@@ -39,7 +39,7 @@ const VideoCall = () => {
 
   const handleICECandidateEvent = (event) => {
     if (event.candidate) {
-      const socket = new WebSocket('ws://localhost:5000/');
+      const socket = new WebSocket('wss://scure-backend.onrender.com/');
       socket.onopen = () => {
         const candidateData = {
           type: 'candidate',
@@ -57,7 +57,7 @@ const VideoCall = () => {
       peerConnectionRef.current.createAnswer()
         .then((answer) => {
           peerConnectionRef.current.setLocalDescription(answer);
-          const socket = new WebSocket('ws://localhost:5000/');
+          const socket = new WebSocket('wss://scure-backend.onrender.com/');
           socket.onopen = () => {
             const answerData = {
               type: 'answer',
@@ -81,7 +81,7 @@ const VideoCall = () => {
     peerConnectionRef.current.createOffer()
       .then((offer) => {
         peerConnectionRef.current.setLocalDescription(offer);
-        const socket = new WebSocket('ws://localhost:5000/');
+        const socket = new WebSocket('wss://scure-backend.onrender.com/');
         socket.onopen = () => {
           const offerData = {
             type: 'offer',

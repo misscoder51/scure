@@ -4,7 +4,7 @@ import { Pill, Calendar, Clock, CheckCircle, Bell, BellOff, FileText, User, Chev
 import { useAuth } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 
-const BASE = 'http://localhost:5001';
+const BASE = 'https://scure-backend.onrender.com';
 const REMINDER_KEY = 'scure_reminders';
 
 const statusStyle = {

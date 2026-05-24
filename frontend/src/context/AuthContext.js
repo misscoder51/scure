@@ -4,7 +4,7 @@ const AuthContext = createContext(null);
 
 const JWT_KEY    = 'scure_jwt';
 const USER_KEY   = 'scure_user';
-const BASE_URL   = 'http://localhost:5001';
+const BASE_URL   = 'https://scure-backend.onrender.com';
 
 export const AuthProvider = ({ children }) => {
   const [user,    setUser]    = useState(null);

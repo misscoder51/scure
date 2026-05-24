@@ -32,7 +32,7 @@ const AddDoctorForm = () => {
     if (!name || !specialization || !email) { setMessage('Please fill in all fields.'); setIsSuccess(false); return; }
     setIsLoading(true); setMessage('');
     try {
-      const r = await axios.post('http://localhost:5001/doctors', { name, specialization, email });
+      const r = await axios.post('https://scure-backend.onrender.com/doctors', { name, specialization, email });
       setIsSuccess(true);
       setMessage(`Dr. ${name} registered with ID: ${r.data._id || r.data.id}`);
       setName(''); setSpec(''); setEmail('');

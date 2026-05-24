@@ -4,7 +4,7 @@ import { useAuth } from './AuthContext';
 
 const NotificationContext = createContext(null);
 
-const BASE_URL = 'http://localhost:5001';
+const BASE_URL = 'https://scure-backend.onrender.com';
 
 export const NotificationProvider = ({ children }) => {
   const { user } = useAuth();

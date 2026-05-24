@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-const SOCKET_URL = 'http://localhost:5001';
+const SOCKET_URL = 'https://scure-backend.onrender.com';
 const ICE_SERVERS = {
   iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
 };

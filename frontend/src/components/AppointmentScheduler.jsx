@@ -15,7 +15,7 @@ const AppointmentScheduler = () => {
   const [success, setSuccess]   = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5001/doctors')
+    axios.get('https://scure-backend.onrender.com/doctors')
       .then((r) => setDoctors(r.data))
       .catch(console.error);
   }, []);
@@ -25,7 +25,7 @@ const AppointmentScheduler = () => {
       setMessage('Please fill out all required fields.'); setSuccess(false); setShowModal(true); return;
     }
     setIsLoading(true);
-    axios.post('http://localhost:5001/appointments', { studentName, studentID, selectedDate, selectedTime, selectedDoctor })
+    axios.post('https://scure-backend.onrender.com/appointments', { studentName, studentID, selectedDate, selectedTime, selectedDoctor })
       .then((r) => {
         setMessage(`Appointment confirmed with Dr. ${r.data.selectedDoctor} on ${r.data.selectedDate} at ${r.data.selectedTime}.`);
         setSuccess(true); setShowModal(true);

@@ -24,9 +24,9 @@ const StudentDashboard = () => {
   useEffect(() => {
     if (!user) return;
     Promise.all([
-      axios.get(`http://localhost:5001/appointments?studentId=${user._id}`).catch(() => ({ data: [] })),
-      axios.get(`http://localhost:5001/prescriptions?patientId=${user._id}`).catch(() => ({ data: [] })),
-      axios.get(`http://localhost:5001/health-records?studentId=${user._id}`).catch(() => ({ data: [] })),
+      axios.get(`https://scure-backend.onrender.com/appointments?studentId=${user._id}`).catch(() => ({ data: [] })),
+      axios.get(`https://scure-backend.onrender.com/prescriptions?patientId=${user._id}`).catch(() => ({ data: [] })),
+      axios.get(`https://scure-backend.onrender.com/health-records?studentId=${user._id}`).catch(() => ({ data: [] })),
     ]).then(([aptRes, rxRes, hrRes]) => {
       setAppointments(aptRes.data);
       setPrescriptions(rxRes.data);

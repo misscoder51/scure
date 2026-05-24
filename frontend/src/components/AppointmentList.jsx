@@ -8,7 +8,7 @@ const AppointmentList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5001/appointments')
+    axios.get('https://scure-backend.onrender.com/appointments')
       .then((r) => setAppointments(r.data))
       .catch(console.error)
       .finally(() => setIsLoading(false));

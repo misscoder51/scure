@@ -482,7 +482,7 @@ export default function HealthRecords() {
         setLoading(true);
         setError(null);
         const res = await axios.get(
-          `http://localhost:5001/health-records?studentId=${user._id}`
+          `https://scure-backend.onrender.com/health-records?studentId=${user._id}`
         );
         // Sort by date descending (most recent first)
         const sorted = (res.data || []).sort(
