@@ -9,6 +9,7 @@ import {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const SOCKET_URL = 'https://scure-backend.onrender.com';
+const PROD_ORIGIN = 'https://scure.vercel.app';
 const ICE_SERVERS = {
   iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
 };
@@ -511,11 +512,11 @@ export default function VideoCall() {
                     borderRadius: 12, border: `1px solid ${tokens.borderSubtle}` 
                   }}>
                     <span style={{ color: tokens.cyan, fontFamily: 'monospace', fontSize: 14 }}>
-                      {window.location.origin}/video-call/{roomId}
+                      {PROD_ORIGIN}/video-call/{roomId}
                     </span>
                     <button 
                       onClick={() => {
-                        navigator.clipboard.writeText(`${window.location.origin}/video-call/${roomId}`);
+                        navigator.clipboard.writeText(`${PROD_ORIGIN}/video-call/${roomId}`);
                         alert('Link copied to clipboard!');
                       }}
                       style={{ 
