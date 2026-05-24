@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Activity, Calendar, Video, Clock, User, CheckCircle, PlusCircle, Zap, FileText } from 'lucide-react';
+import { Activity, Video, Clock, User, CheckCircle, PlusCircle, Zap } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 

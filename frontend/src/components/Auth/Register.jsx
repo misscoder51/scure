@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { AlertTriangle, KeyRound, User, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { AlertTriangle, KeyRound, User, ArrowRight, CheckCircle } from 'lucide-react';
 
 const fieldStyle = {
   width: '100%', background: 'rgba(255,255,255,0.03)',

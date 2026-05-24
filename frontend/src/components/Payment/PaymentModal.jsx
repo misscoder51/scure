@@ -21,8 +21,8 @@ const CheckoutForm = ({ amount, onSuccess, onCancel }) => {
     setError(null);
 
     try {
-      const { data } = await axios.post('https://scure-backend.onrender.com/payments/create-payment-intent', { amount });
-      const clientSecret = data.clientSecret;
+      await axios.post('https://scure-backend.onrender.com/payments/create-payment-intent', { amount });
+
 
       // In a real environment, we'd confirm the card payment here:
       // const result = await stripe.confirmCardPayment(clientSecret, {

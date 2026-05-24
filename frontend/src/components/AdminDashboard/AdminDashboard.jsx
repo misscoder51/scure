@@ -6,7 +6,7 @@ import { useAuth } from '../../context/AuthContext';
 
 const AdminDashboard = () => {
   const { user } = useAuth();
-  const [doctorsCount, setDoctorsCount]     = useState(0);
+  const [, setDoctorsCount]     = useState(0);
   const [appointmentsCount, setAppointmentsCount] = useState(0);
   const [usersCount, setUsersCount]         = useState(0);
   const [inventory, setInventory]           = useState([]);

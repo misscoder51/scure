@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import { Activity, Calendar, Heart, ArrowRight, Pill, FileText, Video, Brain } from 'lucide-react';
+import { Activity, Calendar, ArrowRight, Pill, FileText, Video, Brain } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import PaymentModal from '../Payment/PaymentModal';
 
 
-const CheckCircle = ({ size = 16, style }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={style}>
-    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-);
+
 
 const StudentDashboard = () => {
   const { user } = useAuth();

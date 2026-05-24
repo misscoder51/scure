@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { LogOut, Bell, User, Zap, Brain, Pill, FileText, LayoutDashboard, X, CheckCheck } from 'lucide-react';
+import { LogOut, Bell, User, Brain, Pill, FileText, LayoutDashboard, CheckCheck } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useNotifications } from '../context/NotificationContext';
 

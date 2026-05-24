@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Pill, Calendar, Clock, CheckCircle, Bell, BellOff, FileText, User, ChevronDown, ChevronUp } from 'lucide-react';
+import { Pill, Calendar, CheckCircle, Bell, BellOff, FileText, ChevronDown, ChevronUp } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 

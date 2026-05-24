@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Pill, Package, AlertTriangle, CheckCircle, Activity, TrendingUp, RefreshCw, ChevronDown, Plus, X, Zap } from 'lucide-react';
+import { Pill, Package, AlertTriangle, CheckCircle, RefreshCw, Plus, X, Zap } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 const BASE = 'https://scure-backend.onrender.com';
