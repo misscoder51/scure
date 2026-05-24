@@ -4,13 +4,6 @@
 // Port 5001
 // =============================================
 
-// Inject Mongoose Mock before any other imports
-const mockMongoose = require('./mocks/mongoose');
-require.cache[require.resolve('mongoose')] = {
-  id: require.resolve('mongoose'),
-  exports: mockMongoose,
-  loaded: true
-};
 
 const express   = require('express');
 const http      = require('http');
@@ -98,7 +91,7 @@ mongoose.connect(MONGODB_URI, {
 }).catch(err => console.error('Initial mongoose connect failed:', err.message));
 
 mongoose.connection.once('open', () => {
-  console.log('[DB] Mock database connection established (Atlas fallback)');
+  console.log('[DB] Database connection established');
 });
 
 // ─── ROUTES ──────────────────────────────────────────────────
