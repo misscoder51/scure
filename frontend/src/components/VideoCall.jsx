@@ -30,7 +30,7 @@ const VideoCall = () => {
         };
 
       
-        wsRef.current = new WebSocket('ws://localhost:8080');
+        wsRef.current = new WebSocket('wss://scure-backend.onrender.com');
         wsRef.current.onopen = () => console.log('WebSocket connected');
         wsRef.current.onmessage = async (event) => {
           const message = JSON.parse(event.data);
