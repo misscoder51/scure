@@ -29,19 +29,23 @@ const server = http.createServer(app);
 // ─── CORS ───────────────────────────────────────────────────
 app.use(cors({
   origin: [
-    "http://localhost:3000",
-    "https://scure.vercel.app"
+    'http://localhost:3000',
+    'https://scure.vercel.app',
+    'https://scure-rlbvpparc-misscoder51s-projects.vercel.app'
   ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
+app.options('*', cors());
 app.use(express.json());
 
 // ─── SOCKET.IO ──────────────────────────────────────────────
 const io = new Server(server, {
   cors: {
     origin: [
-      "http://localhost:3000",
-      "https://scure.vercel.app"
+      'http://localhost:3000',
+      'https://scure.vercel.app',
+      'https://scure-rlbvpparc-misscoder51s-projects.vercel.app'
     ],
     methods: ['GET', 'POST'],
     credentials: true
