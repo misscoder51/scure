@@ -27,12 +27,25 @@ const app    = express();
 const server = http.createServer(app);
 
 // ─── CORS ───────────────────────────────────────────────────
-app.use(cors({ origin: '*', methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'] }));
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://scure.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // ─── SOCKET.IO ──────────────────────────────────────────────
 const io = new Server(server, {
-  cors: { origin: '*', methods: ['GET', 'POST'] }
+  cors: {
+    origin: [
+      "http://localhost:3000",
+      "https://scure.vercel.app"
+    ],
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
 });
 
 // Make io accessible in routes via req.app.get('io')
